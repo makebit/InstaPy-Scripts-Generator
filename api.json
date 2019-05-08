@@ -1,0 +1,1911 @@
+[{
+    "name": "InstaPy",
+    "description": "InstaPy initializer",
+    "group": 1,
+    "params": [{
+        "name": "username",
+        "spec": {
+            "kind": "simple",
+            "type": "string"
+        },
+        "description": "Instagram username",
+        "optional": false
+    }, {
+        "name": "password",
+        "spec": {
+            "kind": "simple",
+            "type": "string"
+        },
+        "description": "Instagram password",
+        "optional": false
+    }, {
+        "name": "headless_browser",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Headless browser, if true windows browser will not be shown",
+        "optional": true
+    }]
+}, {
+    "name": "accept_follow_requests",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "sleep_delay",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "clarifai_check_img_for",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "tags",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "tags_skip",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "comment",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "comments",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "comment_by_locations",
+    "description": "This method allows commenting by locations, without liking posts. To get locations follow instructions in 'Like by Locations'",
+    "group": 8,
+    "params": [{
+        "name": "locations",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "skip_top_posts",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "follow_by_list",
+    "description": "This will follow each account from a list of instagram nicknames",
+    "group": 9,
+    "params": [{
+        "name": "followlist",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": false
+    }, {
+        "name": "times",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "sleep_delay",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "It will use the configuration of set_user_interact setting",
+        "optional": true
+    }]
+}, {
+    "name": "follow_by_locations",
+    "description": "This method allows following by locations, without liking or commenting posts. To get locations follow instructions in 'Like by Locations'",
+    "group": 9,
+    "params": [{
+        "name": "locations",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": false
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "skip_top_posts",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "follow_by_tags",
+    "description": "Follow user based on hashtags (without liking the image)",
+    "group": 9,
+    "params": [{
+        "name": "tags",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": " The tags that will be searched for and posts will be liked from",
+        "optional": false
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "The amount of posts that will be liked",
+        "optional": true
+    }, {
+        "name": "skip_top_posts",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Determines whether the first 9 top posts should be liked or not (default is True)",
+        "optional": true
+    }, {
+        "name": "use_smart_hashtags",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Make use of the smart hashtag feature",
+        "optional": true
+    }, {
+        "name": "use_smart_location_hashtags",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Make use of the smart location hashtag feature",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Determines whether the first amount of posts should be liked or a random selection.",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "Determines which media should be liked, Photo or Video (default is None which is all)",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Defines whether the users of the given post should also be interacted with (needs set_user_interact to be also set)",
+        "optional": true
+    }]
+}, {
+    "name": "follow_commenters",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "usernames",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "daysold",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "max_pic",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "sleep_delay",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "follow_likers",
+    "description": "This will follow the people those liked photos of given list of users",
+    "group": 9,
+    "params": [{
+        "name": "usernames",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of usernames",
+        "optional": false
+    }, {
+        "name": "photos_grab_amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "It is how many photos will I grab from users profile and analyze who liked it",
+        "optional": true
+    }, {
+        "name": "follow_likers_per_photo",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": " The follow_likers_per_photo is how many people to follow per each photo",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "randomize=False will take photos from newes, true will take random from first 12",
+        "optional": true
+    }, {
+        "name": "sleep_delay",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "It is used to define break time after some good following (averagely ~10 follows)",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "follow_user_followers",
+    "description": "Follows the followers of each given user",
+    "group": 9,
+    "params": [{
+        "name": "usernames",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of usernames",
+        "optional": false
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "The amount is for each account",
+        "optional": true
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "If randomize is false it will pick in a top-down fashion",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "sleep_delay",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "follow_user_following",
+    "description": "Follows the people that a given users are following",
+    "group": 9,
+    "params": [{
+        "name": "usernames",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of usernames",
+        "optional": false
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "The amount is for each account",
+        "optional": true
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "If randomize is false it will pick in a top-down fashion",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "sleep_delay",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "interact_by_comments",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "usernames",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "posts_amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "comments_per_post",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "reply",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "interact_by_URL",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "urls",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "interact_by_users",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "usernames",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "interact_by_users_tagged_posts",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "usernames",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "interact_user_followers",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "usernames",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "like_by_feed",
+    "description": "This is used to perform likes on your own feeds",
+    "group": 7,
+    "params": [{
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "It specifies how many total likes you want to perform",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "It randomly skips posts to be liked on your feed",
+        "optional": true
+    }, {
+        "name": "unfollow",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "It unfollows the author of a post which was considered inappropriate",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "It visits the author's profile page of a certain post and likes a given number of his pictures, then returns to feed",
+        "optional": true
+    }]
+}, {
+    "name": "like_by_locations",
+    "description": "",
+    "group": 7,
+    "params": [{
+        "name": "locations",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "You can find locations for the like_by_locations function by: browsing https://www.instagram.com/explore/locations/ or with a regular instagram search.",
+        "optional": false
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "skip_top_posts",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "like_by_tags",
+    "description": "Likes images per given tag",
+    "group": 7,
+    "params": [{
+        "name": "tags",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "The tags that will be searched for and posts will be liked from",
+        "optional": false
+    }, {
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "The amount of posts that will be liked",
+        "optional": true
+    }, {
+        "name": "skip_top_posts",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Determines whether the first 9 top posts should be liked or not (default is True)",
+        "optional": true
+    }, {
+        "name": "use_smart_hashtags",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Make use of the smart hashtag feature",
+        "optional": true
+    }, {
+        "name": "use_smart_location_hashtags",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Make use of the smart location hashtag feature",
+        "optional": true
+    }, {
+        "name": "interact",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Defines whether the users of the given post should also be interacted with (needs set_user_interact to be also set)",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Determines whether the first amount of posts should be liked or a random selection.",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "Determines which media should be liked, Photo or Video (default is None which is all)",
+        "optional": false
+    }]
+}, {
+    "name": "remove_follow_requests",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "sleep_delay",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_action_delays",
+    "description": "After doing each action- like, comment, follow or unfollow, there is a sleep delay to provide smooth activity flow. But you can set a custom sleep delay for each action yourself by using the set_action_delays setting!",
+    "group": 6,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "like",
+        "spec": {
+            "kind": "simple",
+            "type": "float"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "comment",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "random_range",
+        "spec": {
+            "kind": "struct",
+            "type": "tuple",
+            "subtype": ["int", "int"],
+            "max-size": 2
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "safety_match",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Note: There is a minimum default delay for each action and if you enter a smaller time of delay than the default value, then it will pick the default value. You can turn that behaviour off with safety_match parameter.",
+        "optional": true
+    }]
+}, {
+    "name": "set_blacklist",
+    "description": "Controls your interactions by campaigns. ex. this week InstaPy will like and comment interacting by campaign called 'soccer', next time InstaPy runs, it will not interact again with users in blacklist. In general, this means that once we turn off the soccer_campaign again, InstaPy will have no track of the people it interacted with about soccer. This will help you target people only once but several times for different campaigns",
+    "group": 6,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": false
+    }, {
+        "name": "campaign",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "Campaign name",
+        "optional": false
+    }]
+}, {
+    "name": "set_comment_replies",
+    "description": "",
+    "group": 3,
+    "params": [{
+        "name": "replies",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_comments",
+    "description": "Changes the possible comments",
+    "group": 3,
+    "params": [{
+        "name": "comments",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of comments",
+        "optional": false
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "Media type",
+        "optional": true
+    }]
+}, {
+    "name": "set_delimit_commenting",
+    "description": "This is used to check the number of existing comments a post has and if it either exceed the maximum value set OR does not pass the minimum value set then it will not comment on that post",
+    "group": 3,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": false
+    }, {
+        "name": "max",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "It is the maximum number of comments to compare",
+        "optional": true
+    }, {
+        "name": "min",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "It is the minimum number of comments to compare",
+        "optional": true
+    }, {
+        "name": "comments_mandatory_words",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "This is used to check the description of the post and the first comment of the post (some users only put tags in the comments instead of the post description) for the occurence of mandatory words before commenting. If none of the mandatory words is present, the post will not be commented. This feature is helpful when you want to comment only on specific tags.",
+        "optional": true
+    }]
+}, {
+    "name": "set_delimit_liking",
+    "description": "This is used to check the number of existing likes a post has and if it either exceed the maximum value set OR does not pass the minimum value set then it will not like that post",
+    "group": 2,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": false
+    }, {
+        "name": "max",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "It is the maximum number of likes to compare",
+        "optional": true
+    }, {
+        "name": "min",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "It is the minimum number of likes to compare",
+        "optional": true
+    }]
+}, {
+    "name": "set_do_comment",
+    "description": "Defines if images should be commented or not.",
+    "group": 3,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Check if you want to enable it",
+        "optional": true
+    }, {
+        "name": "percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "Percentage of comments",
+        "optional": true
+    }]
+}, {
+    "name": "set_do_follow",
+    "description": "Defines if the user of the liked image should be followed",
+    "group": 4,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Check if you want to enable it",
+        "optional": false
+    }, {
+        "name": "percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "Percentage of follow",
+        "optional": false
+    }, {
+        "name": "times",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_do_like",
+    "description": "Set like feature. This method is only needed for the interact_by_... actions. Posts will liked by default when using like_by_... actions.",
+    "group": 2,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "To enable do like",
+        "optional": true
+    }, {
+        "name": "percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "Percentage of post to like",
+        "optional": true
+    }]
+}, {
+    "name": "set_do_reply_to_comments",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_dont_include",
+    "description": "Defines which accounts should not be unfollowed, will prevent commenting on and unfollowing your good friends (the images will still be liked",
+    "group": 4,
+    "params": [{
+        "name": "friends",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of friends",
+        "optional": true
+    }]
+}, {
+    "name": "set_dont_like",
+    "description": "Changes the possible restriction tags, if one of this words is in the description, the image won't be liked but user still might be unfollowed",
+    "group": 2,
+    "params": [{
+        "name": "tags",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "'#exactmatch', '[startswith', ']endswith', 'broadmatch'",
+        "optional": true
+    }]
+}, {
+    "name": "set_dont_unfollow_active_users",
+    "description": "Prevents unfollow followers who have liked one of your latest n posts",
+    "group": 4,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": false
+    }, {
+        "name": "posts",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "boundary",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_ignore_if_contains",
+    "description": "Ignores the don't likes if the description contains one of the given words",
+    "group": 2,
+    "params": [{
+        "name": "words",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of words",
+        "optional": true
+    }]
+}, {
+    "name": "set_ignore_users",
+    "description": "Changes the possible restriction to users, if a user who posts is one of these, the image won't be liked",
+    "group": 2,
+    "params": [{
+        "name": "users",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of users",
+        "optional": false
+    }]
+}, {
+    "name": "set_mandatory_language",
+    "description": "Restrict the description of the image to a character set",
+    "group": 2,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": false
+    }, {
+        "name": "character_set",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "Available character sets: LATIN, GREEK, CYRILLIC, ARABIC, HEBREW, CJK, HANGUL, HIRAGANA, KATAKANA and THAI",
+        "optional": false
+    }]
+}, {
+    "name": "set_mandatory_words",
+    "description": "Searches the description, location and owner comments for words and will like the image if any of those words are in there",
+    "group": 2,
+    "params": [{
+        "name": "words",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of words",
+        "optional": false
+    }]
+}, {
+    "name": "set_quota_supervisor",
+    "description": "Take full control of the actions with the most sophisticated approaches",
+    "group": 6,
+    "params": [{
+        "name": "sleep_after",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "sleepyhead",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "stochastic_flow",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "notify_me",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "peak_likes",
+        "spec": {
+            "kind": "struct",
+            "type": "tuple",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "peak_comments",
+        "spec": {
+            "kind": "struct",
+            "type": "tuple",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "peak_follows",
+        "spec": {
+            "kind": "struct",
+            "type": "tuple",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "peak_unfollows",
+        "spec": {
+            "kind": "struct",
+            "type": "tuple",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "peak_server_calls",
+        "spec": {
+            "kind": "struct",
+            "type": "tuple",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_relationship_bounds",
+    "description": "This is used to check the number of followers and/or following a user has and if these numbers either exceed the number set OR does not pass the number set OR if their ratio does not reach desired potency ratio then no further interaction happens",
+    "group": 1,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "potency_ratio",
+        "spec": {
+            "kind": "simple",
+            "type": "float"
+        },
+        "description": "It accepts values in 2 formats according to your style: positive & negative. Positive: potency_ratio == followers count / following count. Negative: potency_ratio == following count / followers count",
+        "optional": true
+    }, {
+        "name": "delimit_by_numbers",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "It is used to activate & deactivate the usage of max & min values",
+        "optional": true
+    }, {
+        "name": "max_followers",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "This is used to check number of followers of a user and skip if they aren't in the boundaries provided",
+        "optional": true
+    }, {
+        "name": "max_following",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "This is used to check number of following of a user and skip if they aren't in the boundaries provided",
+        "optional": true
+    }, {
+        "name": "min_followers",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "This is used to check number of followers of a user and skip if they aren't in the boundaries provided",
+        "optional": true
+    }, {
+        "name": "min_following",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "This is used to check number of following of a user and skip if they aren't in the boundaries provided",
+        "optional": true
+    }, {
+        "name": "min_posts",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "This is used to check number of posts of a user and skip if they aren't in the boundaries provided",
+        "optional": true
+    }, {
+        "name": "max_posts",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "This is used to check number of posts of a user and skip if they aren't in the boundaries provided",
+        "optional": true
+    }]
+}, {
+    "name": "set_simulation",
+    "description": "During indirect data retrieval, simulation happens to provide a genuine activity flow triggered by a wise algorithm.",
+    "group": 6,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": false
+    }, {
+        "name": "percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_skip_users",
+    "description": "This is used to skip users with certain condition. Default is skip private account",
+    "group": 6,
+    "params": [{
+        "name": "skip_private",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Skip private account",
+        "optional": true
+    }, {
+        "name": "private_percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "You can set a percentage of skipping: private_percentage= 100 always skip private users private_percentage= 0 never skip private users",
+        "optional": true
+    }, {
+        "name": "skip_no_profile_pic",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Skip users that don't have profile picture",
+        "optional": true
+    }, {
+        "name": "no_profile_pic_percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "You can set a percentage of skipping: no_profile_pic_percentage= 100 always skip no profile pic users no_profile_pic_percentage= 0 never skip no profile pic percentage users",
+        "optional": true
+    }, {
+        "name": "skip_business",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Skip users that have business account",
+        "optional": true
+    }, {
+        "name": "business_percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "N.B.: This business_percentage parameter works only if no skip_business_categories or dont_skip_business_categories are provided!",
+        "optional": true
+    }, {
+        "name": "skip_non_business",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "dont_skip_business_categories",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "skip_business_categories",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_smart_hashtags",
+    "description": "Generate smart hashtags based on https://displaypurposes.com/ ranking, banned and spammy tags are filtered out.",
+    "group": 5,
+    "params": [{
+        "name": "tags",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of tags",
+        "optional": false
+    }, {
+        "name": "limit",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "Defines amount limit of generated hashtags by hashtag",
+        "optional": true
+    }, {
+        "name": "sort",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "Sort generated hashtag list 'top' and 'random' are available",
+        "optional": true
+    }, {
+        "name": "log_tags",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Shows generated hashtags before use it",
+        "optional": true
+    }]
+}, {
+    "name": "set_smart_location_hashtags",
+    "description": "Generate smart hashtags based on https://displaypurposes.com/map",
+    "group": 5,
+    "params": [{
+        "name": "locations",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "List of locations",
+        "optional": false
+    }, {
+        "name": "limit",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "Defines amount limit of generated hashtags by hashtag",
+        "optional": true
+    }, {
+        "name": "radius",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "Radius around the location in Miles",
+        "optional": true
+    }, {
+        "name": "log_tags",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "Shows generated hashtags before use it",
+        "optional": true
+    }]
+}, {
+    "name": "set_use_clarifai",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "api_key",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "models",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "workflow",
+        "spec": {
+            "kind": "struct",
+            "type": "list",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "probability",
+        "spec": {
+            "kind": "simple",
+            "type": "float"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "full_match",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "check_video",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "proxy",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_use_meaningcloud",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "license_key",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "polarity",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "agreement",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "subjectivity",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "confidence",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_use_yandex",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "enabled",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "API_key",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "match_language",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "language_code",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "set_user_interact",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "randomize",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "percentage",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "media",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }]
+}, {
+    "name": "unfollow_users",
+    "description": "",
+    "group": 1,
+    "params": [{
+        "name": "amount",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "customList",
+        "spec": {
+            "type": ""
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "",
+        "spec": {
+            "type": ""
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "InstapyFollowed",
+        "spec": {
+            "kind": "struct",
+            "type": "tuple",
+            "subtype": "str",
+            "max-size": -1
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "nonFollowers",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "allFollowing",
+        "spec": {
+            "kind": "simple",
+            "type": "bool"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "style",
+        "spec": {
+            "kind": "simple",
+            "type": "str"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "unfollow_after",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "delay_followbackers",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }, {
+        "name": "sleep_delay",
+        "spec": {
+            "kind": "simple",
+            "type": "int"
+        },
+        "description": "",
+        "optional": true
+    }]
+}]

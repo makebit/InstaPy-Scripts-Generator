@@ -1,0 +1,9 @@
+.f-name {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.f-desc {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
